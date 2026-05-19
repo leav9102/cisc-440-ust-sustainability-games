@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# Environment & secrets
+.env
+.env.*
+
+# OS & editors
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Project outputs (regenerate locally)
+output/*
+!output/.gitkeep
+
+# Course datasets — download from Canvas into data/ (do not commit large files)
+data/*.csv
+data/*.xlsx
+data/*.xls
+data/*.docx
+!data/README.md
