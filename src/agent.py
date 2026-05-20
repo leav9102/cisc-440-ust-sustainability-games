@@ -21,7 +21,7 @@ class GreedyAgent(Agent):
         self.greedy_factor = greedy_factor
 
     def act(self, current, state, graph):
-        # choose neighbor maximizing reward / cost
+        # choose direct neighbor maximizing reward / cost ratio
         best = None
         best_val = -float('inf')
         for n, d in graph.neighbors(current):
