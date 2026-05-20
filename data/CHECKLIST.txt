@@ -9,10 +9,10 @@ CISC 440 data checklist — update as you add files
 [x] sustainability_words.txt
 [x] Sustainability Trivia Game 2026.docx
 
-[ ] ust_building_coordinates.csv
-[ ] ust-clear building names.csv
-[ ] ust_sustainability_data_pack.xlsx (optional)
-[ ] ust_campus_map_plot.py → save copy in ../src/ if you use it
+[x] ust_building_coordinates.csv
+[x] ust-clear building names.csv
+[x] ust_sustainability_data_pack.xlsx (optional)
+[x] ust_campus_map_plot.py → save copy in ../src/ if you use it
 
 When you download from Canvas, drag files into this data/ folder
 (or Downloads — then ask to sync again).
