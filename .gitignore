@@ -29,8 +29,5 @@ output/*
 !output/.gitkeep
 
 # Course datasets — download from Canvas into data/ (do not commit large files)
-data/*.csv
-data/*.xlsx
 data/*.xls
-data/*.docx
 !data/README.md

@@ -1,0 +1,21 @@
+resource_type,location_name,sub_location_or_scope,user_access_scope,capacity_or_count,notes,source_url,status
+recycling_bin,Residence halls (all rooms and apartments),Each residence hall room and apartment,students in residence halls,,Directly confirmed on Sustainable Living page,https://www.stthomas.edu/residence-life/policies-resources/sustainable-living/,confirmed
+compost_bin,Residence halls (all rooms and apartments),Each residence hall room and apartment,students in residence halls,,Directly confirmed on Sustainable Living page,https://www.stthomas.edu/residence-life/policies-resources/sustainable-living/,confirmed
+waste_recovery_container,Residence halls,Waste recovery rooms within or outside halls,students in residence halls,,"Trash, recycling, and/or composting containers",https://www.stthomas.edu/_media-library/_documents/residence-life/residence-life-handbook.pdf,confirmed
+compost_collection_program,Binz Refectory,Dining location,campus dining users,,Sustainability plan says compostable-material collection began at Binz Refectory in 2016,https://look.stthomas.edu/view/938809190,confirmed
+ev_charging,Anderson Parking Facility,parking facility,students/faculty/staff/visitors,2.0,ChargePoint required,https://www.stthomas.edu/_media-library/_documents/parking-transportation/st-paul-parking-guide.pdf,confirmed
+ev_charging,Anderson Student Center Garage,parking garage,students/faculty/staff/visitors,2.0,ChargePoint required; visitor hours limited,https://www.stthomas.edu/_media-library/_documents/parking-transportation/st-paul-parking-guide.pdf,confirmed
+ev_charging,Frey Residence Hall Ramp,parking garage,students/faculty/staff/visitors,3.0,ChargePoint required,https://www.stthomas.edu/_media-library/_documents/parking-transportation/st-paul-parking-guide.pdf,confirmed
+ev_charging,Schoenecker Hall North Residence Hall Garage,parking garage,students/faculty/staff/visitors,3.0,ChargePoint required,https://www.stthomas.edu/_media-library/_documents/parking-transportation/st-paul-parking-guide.pdf,confirmed
+ev_charging,Lot K,surface lot,students/faculty/staff/visitors,2.0,ChargePoint required,https://www.stthomas.edu/_media-library/_documents/parking-transportation/st-paul-parking-guide.pdf,confirmed
+secure_bike_storage,Anderson Parking Facility (APF),Level 1,campus community,,Bike cage / secure storage,https://www.stthomas.edu/parking-transportation/options/biking/,confirmed
+secure_bike_storage,Schoenecker Hall North Garage,resident-student access,resident students,,Bike cage / secure storage,https://www.stthomas.edu/parking-transportation/options/biking/,confirmed
+secure_bike_storage,Morrison Hall Garage,R2 level,resident students,,Bike cage / secure storage,https://www.stthomas.edu/parking-transportation/options/biking/,confirmed
+secure_bike_storage,Frey Residence Hall,main level and east end,resident students,,Bike cage / secure storage,https://www.stthomas.edu/parking-transportation/options/biking/,confirmed
+bike_repair_station,O'Shaughnessy Stadium,south side near bike racks,campus community,,Self-service bike repair station,https://www.stthomas.edu/parking-transportation/options/biking/,confirmed
+bike_repair_station,Owens Science Hall,west entrance near bike racks,campus community,,Self-service bike repair station,https://www.stthomas.edu/parking-transportation/options/biking/,confirmed
+bike_repair_station,Frey Residence Hall,inside secure bike storage,resident students,,Self-service bike repair station,https://www.stthomas.edu/parking-transportation/options/biking/,confirmed
+bike_repair_station,Schoenecker Hall North,inside secure bike storage,resident students,,Self-service bike repair station,https://www.stthomas.edu/parking-transportation/options/biking/,confirmed
+bike_wash_station,Frey Parking Garage,"east end, level 1",resident students / campus community,,Bike wash station,https://www.stthomas.edu/parking-transportation/options/biking/,confirmed
+green_space,Pollinator Path,network of gardens across campus,campus community,,Living laboratory for pollinator research and habitat conservation,https://www.stthomas.edu/about/sustainability/,confirmed
+green_space,Two greenhouses and medicinal garden,St. Paul campus,campus community,,Maintained by Biology Department,https://www.stthomas.edu/about/our-campuses/st-paul/,confirmed

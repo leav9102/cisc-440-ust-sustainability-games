@@ -1,0 +1,9 @@
+asset_type,location_name,designation_or_feature,year_or_opening,asset_role,source_url,status
+leed_building,Anderson Student Center,LEED Gold,,green building,https://www.stthomas.edu/about/sustainability/,confirmed
+leed_building,Frey Residence Hall,LEED Platinum,2020.0,green building,https://www.stthomas.edu/residence-life/policies-resources/sustainable-living/,confirmed
+leed_building,Schoenecker Center,LEED Gold,2024.0,green building,https://www.stthomas.edu/about/sustainability/,confirmed
+leed_building,Schoenecker Hall North,LEED Silver,,green building,https://www.stthomas.edu/about/sustainability/,confirmed
+solar_asset,Brady Hall,First solar photovoltaic panels installed on campus,2012.0,solar generation milestone,https://look.stthomas.edu/view/938809190,confirmed
+microgrid_asset,Center for Microgrid Research / Greenhouse,Expanded microgrid system planned to connect up to 9 campus buildings,2024.0,microgrid research and energy hub,https://engineering.stthomas.edu/_media-library/_documents/pdfs/center-microgrid-research/cmr-mn-dept-commerce-project-final-dec2021-june2024.pdf,confirmed
+energy_policy,"New buildings >25,000 square feet",Designed to a minimum of LEED Silver,,campus facilities standard,https://www.stthomas.edu/about/sustainability/,confirmed
+transport_energy_asset,EV charging network,EV charging available at 5 St. Paul locations with 12 total spaces,2025.0,transport electrification support,https://www.stthomas.edu/_media-library/_documents/parking-transportation/st-paul-parking-guide.pdf,derived_from_confirmed_counts
