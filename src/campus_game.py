@@ -14,16 +14,23 @@ def normalize_name(name: str) -> str:
 
 
 class DataLoader:
-    def __init__(self, data_dir: str = 'data'):
+    def __init__(self, data_dir: str = 'data', use_subset: bool = True):
         self.data_dir = data_dir
+        self.use_subset = use_subset
 
     def load_nodes(self) -> List[Dict[str, str]]:
-        path = os.path.join(self.data_dir, 'ust_selected_game_nodes.csv')
+        if self.use_subset:
+            path = os.path.join(self.data_dir, 'ust_game_subset_15nodes.csv')
+        else:
+            path = os.path.join(self.data_dir, 'ust_selected_game_nodes.csv')
         with open(path, newline='', encoding='utf-8') as f:
             return list(csv.DictReader(f))
 
     def load_edges(self) -> List[Dict[str, str]]:
-        path = os.path.join(self.data_dir, 'ust_building_edges.csv')
+        if self.use_subset:
+            path = os.path.join(self.data_dir, 'ust_game_subset_15edges.csv')
+        else:
+            path = os.path.join(self.data_dir, 'ust_building_edges.csv')
         with open(path, newline='', encoding='utf-8') as f:
             return list(csv.DictReader(f))
 
@@ -189,8 +196,8 @@ class TriviaGame:
 
 
 class CampusGraph:
-    def __init__(self, data_dir: str = 'data'):
-        self.loader = DataLoader(data_dir)
+    def __init__(self, data_dir: str = 'data', use_subset: bool = True):
+        self.loader = DataLoader(data_dir, use_subset=use_subset)
         self.nodes = self.loader.load_nodes()
         self.edges = self.loader.load_edges()
         self.distances = self.loader.load_distance_matrix()
@@ -580,8 +587,8 @@ class MinimaxShowdown:
 
 
 class SustainabilityGameCLI:
-    def __init__(self, data_dir: str = 'data'):
-        self.graph = CampusGraph(data_dir)
+    def __init__(self, data_dir: str = 'data', use_subset: bool = True):
+        self.graph = CampusGraph(data_dir, use_subset=use_subset)
         self.search = SearchGame(self.graph)
         self.csp = ResourceCSP(self.graph)
         self.showdown = MinimaxShowdown(self.graph, self.csp.solve())

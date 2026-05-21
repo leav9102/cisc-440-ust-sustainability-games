@@ -2,7 +2,7 @@ import pandas as pd
 import math
 import matplotlib.pyplot as plt
 
-coords_path = "data/ust_building_coordinates.csv"
+coords_path = "data/ust_game_subset_15nodes.csv"
 df = pd.read_csv(coords_path)
 
 threshold = 0.00115
@@ -10,13 +10,13 @@ threshold = 0.00115
 edges = []
 for i in range(len(df)):
     for j in range(i + 1, len(df)):
-        lat1, lon1 = df.loc[i, "Latitude"], df.loc[i, "Longitude"]
-        lat2, lon2 = df.loc[j, "Latitude"], df.loc[j, "Longitude"]
+        lat1, lon1 = df.loc[i, "latitude"], df.loc[i, "longitude"]
+        lat2, lon2 = df.loc[j, "latitude"], df.loc[j, "longitude"]
         dist = math.sqrt((lat1 - lat2) ** 2 + (lon1 - lon2) ** 2)
         if dist <= threshold:
             edges.append({
-                "Source": df.loc[i, "Building"],
-                "Target": df.loc[j, "Building"],
+                "Source": df.loc[i, "building_name"],
+                "Target": df.loc[j, "building_name"],
                 "Distance": round(dist, 6)
             })
 
@@ -26,23 +26,25 @@ for e in edges:
     connected.add(e["Target"])
 
 for i in range(len(df)):
-    b = df.loc[i, "Building"]
+    b = df.loc[i, "building_name"]
     if b not in connected:
         best_j = None
         best_dist = None
         for j in range(len(df)):
             if i == j:
                 continue
-            lat1, lon1 = df.loc[i, "Latitude"], df.loc[i, "Longitude"]
-            lat2, lon2 = df.loc[j, "Latitude"], df.loc[j, "Longitude"]
+            lat1, lon1 = df.loc[i, "latitude"], df.loc[i, "longitude"]
+            lat2, lon2 = df.loc[j, "latitude"], df.loc[j, "longitude"]
             dist = math.sqrt((lat1 - lat2) ** 2 + (lon1 - lon2) ** 2)
             if best_dist is None or dist < best_dist:
                 best_dist = dist
                 best_j = j
-        s = df.loc[i, "Building"]
-        t = df.loc[best_j, "Building"]
-        pair = tuple(sorted((s, t)))
-        already = any(tuple(sorted((e["Source"], e["Target"]))) == pair for e in edges)
+        s = df.loc[i, "building_name"]
+        if best_j is None:
+            continue
+        t = df.loc[best_j, "building_name"]
+        pair = tuple(sorted((str(s), str(t))))
+        already = any(tuple(sorted((str(e["Source"]), str(e["Target"])))) == pair for e in edges)
         if not already:
             edges.append({
                 "Source": s,
@@ -51,21 +53,21 @@ for i in range(len(df)):
             })
 
 edges_df = pd.DataFrame(edges).sort_values(["Source", "Target"]).reset_index(drop=True)
-edges_df.to_csv("data/ust_building_edges.csv", index=False)
+edges_df.to_csv("data/ust_game_subset_15edges.csv", index=False)
 
 fig, ax = plt.subplots(figsize=(10, 8))
 
 for _, row in edges_df.iterrows():
-    s = df[df["Building"] == row["Source"]].iloc[0]
-    t = df[df["Building"] == row["Target"]].iloc[0]
-    ax.plot([s["Longitude"], t["Longitude"]], [s["Latitude"], t["Latitude"]], linewidth=1)
+    s = df[df["building_name"] == row["Source"]].iloc[0]
+    t = df[df["building_name"] == row["Target"]].iloc[0]
+    ax.plot([s["longitude"], t["longitude"]], [s["latitude"], t["latitude"]], linewidth=1)
 
-ax.scatter(df["Longitude"], df["Latitude"], s=40)
+ax.scatter(df["longitude"], df["latitude"], s=40)
 
 for _, row in df.iterrows():
     ax.annotate(
-        row["Building"],
-        (row["Longitude"], row["Latitude"]),
+        row["building_name"],
+        (row["longitude"], row["latitude"]),
         xytext=(4, 4),
         textcoords="offset points",
         fontsize=8
