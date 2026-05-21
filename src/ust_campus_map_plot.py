@@ -2,7 +2,7 @@ import pandas as pd
 import math
 import matplotlib.pyplot as plt
 
-coords_path = "ust_building_coordinates.csv"
+coords_path = "data/ust_building_coordinates.csv"
 df = pd.read_csv(coords_path)
 
 threshold = 0.00115
@@ -51,7 +51,7 @@ for i in range(len(df)):
             })
 
 edges_df = pd.DataFrame(edges).sort_values(["Source", "Target"]).reset_index(drop=True)
-edges_df.to_csv("ust_building_edges.csv", index=False)
+edges_df.to_csv("data/ust_building_edges.csv", index=False)
 
 fig, ax = plt.subplots(figsize=(10, 8))
 
@@ -77,5 +77,5 @@ ax.set_ylabel("Latitude")
 ax.grid(True)
 
 plt.tight_layout()
-plt.savefig("ust_campus_map_plot.png", dpi=200, bbox_inches="tight")
+plt.savefig("output/ust_campus_map_plot.png", dpi=200, bbox_inches="tight")
 plt.show()
