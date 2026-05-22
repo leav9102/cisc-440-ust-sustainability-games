@@ -4,10 +4,13 @@ AI-based sustainability games on a simplified University of St. Thomas (St. Paul
 
 ## Team
 
-| Name | Role | GitHub |
-|------|------|--------|
-| _Add member_ | | |
-| _Add member_ | | |
+| Name           | GitHub |
+|----------------|--------|
+| Curtis Leaver  |        |
+| Max Floen      |        |
+| Lin Khit Lu    |        |
+| Zach Majorowicz|        |
+
 
 ## Project goals
 
